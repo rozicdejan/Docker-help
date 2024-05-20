@@ -1,13 +1,40 @@
 # Docker-help
+# Install on Ubuntu
+## Update and upgrade system
+To update the package list and the packages themselves, run the following two commands.
+
+          sudo apt update
+          sudo apt upgrade
+## Install the required packages.
+
+     sudo apt install curl apt-transport-https ca-certificates      
+## Add the GPG key for the Ubuntu repository to our keyrings directory.
+     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee -a           /etc/apt/sources.list.d/docker.list
+## update
+     sudo apt update
+## install
+     sudo apt install docker-ce
+## testing installation
+     docker --version
+## pull test docker
+     sudo docker pull hello-world
+## run hello-word docker
+     sudo docker run hello-world
+     
 ## Configure Docker to start on boot with systemd
 Many modern Linux distributions use systemd to manage which services start when the system boots. On Debian and Ubuntu, the Docker service starts on boot by default. To automatically start Docker and containerd on boot for other Linux distributions using systemd, run the following commands:
 
      sudo systemctl enable docker.service
      sudo systemctl enable containerd.service
+     sudo systemctl start docker
 To stop this behavior, use disable instead.
 
      sudo systemctl disable docker.service
      sudo systemctl disable containerd.service
+Check status
+
+     sudo systemctl status docker
 ## Create the docker group and add your user:
 
       sudo groupadd docker
