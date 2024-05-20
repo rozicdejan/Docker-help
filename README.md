@@ -18,8 +18,8 @@ If you're running Linux in a virtual machine, it may be necessary to restart the
 ## Verify that you can run docker commands without sudo.
 
       docker run hello-world
- #Warning
- ##If you initially ran Docker CLI commands using sudo before adding your user to the docker group, you may see the following error:
+ # Warning
+ If you initially ran Docker CLI commands using sudo before adding your user to the docker group, you may see the following error:
 
 
      WARNING: Error loading config file: /home/user/.docker/config.json -
