@@ -1,6 +1,12 @@
 # Docker-help
 # Check for docker info 
+     
       docker info
+# Not sure if your container is up and running
+If, after starting your container in step 2, you’re not sure if your container is up and running, you can run the code below:
+
+      docker inspect homeassistantCopy
+This code will return all necessary information about your container.
 A Docker container consists of network settings, volumes, and images. The location of Docker files depends on your operating system. Here is an overview for the most used operating systems:
 # Docker DIR
     Ubuntu: /var/lib/docker/
